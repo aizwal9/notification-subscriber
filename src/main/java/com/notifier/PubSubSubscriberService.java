@@ -32,7 +32,7 @@ public class PubSubSubscriberService {
     @PostConstruct
     public void subscribe() {
         pubSubTemplate.subscribe(subscriptionId, message -> {
-            String payload = message.toString();
+            String payload = message.getPubsubMessage().getData().toStringUtf8();
             log.info("Message received: {}", payload);
             notificationService.showMacNotification(payload);
             message.ack();

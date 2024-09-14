@@ -11,7 +11,7 @@ public class NotificationService {
 
     public void showMacNotification(String messageContent) {
         try {
-            String notificationCommand = String.format("terminal-notifier -message '%s' -title '%s'", messageContent, "NA");
+            String[] notificationCommand = {"terminal-notifier", "-message", messageContent, "-title", "Stock alert"};
             Runtime.getRuntime().exec(notificationCommand);
             log.info("Notification gotcha");
         } catch (IOException e) {
