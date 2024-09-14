@@ -12,12 +12,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class PubSubConfig {
 
-//    @Bean
-//    public PubSubTemplate pubSubTemplate(PubSubTemplate pubSubTemplate){
-//        return pubSubTemplate;
-//    }
-
-
     @Value("${spring.cloud.gcp.pubsub.project-id}")
     private String gcpProjectId;
 
